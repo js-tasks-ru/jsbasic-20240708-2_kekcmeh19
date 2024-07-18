@@ -1,13 +1,11 @@
 function isEmpty(obj) {
   // ваш код...
-  let props = [];
+  let prop = 0;
 
   for (key in obj) {
-    props.push(key);
-    if(props.length > 0) {
-      break;
-    }
+    prop = key;
+    break;
   }
 
-  return !Boolean(props.length);
+  return !Boolean(prop);
 }
