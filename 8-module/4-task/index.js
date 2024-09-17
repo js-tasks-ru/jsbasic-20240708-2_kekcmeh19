@@ -156,6 +156,8 @@ export default class Cart {
 
     this.Modal.open();
 
+    this.submitButton = document.querySelector('button[type="submit"]');
+
     this.addPlusMinusEventListenters();
   }
 
@@ -222,7 +224,8 @@ export default class Cart {
 
     promiseResponse
       .then((response) => {
-        document.querySelector('button[type="submit"]').classList.add('is-loading');
+        this.submitButton.classList.add('is-loading');
+
         this.Modal.setTitle('Success!');
         this.cartItems.length = 0;
 
