@@ -187,6 +187,10 @@ export default class Cart {
     let openModal = document.querySelector('.is-modal-open');
 
     if(openModal) {
+      if(!cartItem) {
+        return;
+      }
+      
       let productId = cartItem.product.id;
       let modalBody = document.querySelector('.modal__body');
 
