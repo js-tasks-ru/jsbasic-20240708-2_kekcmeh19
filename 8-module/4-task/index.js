@@ -186,11 +186,7 @@ export default class Cart {
   onProductUpdate(cartItem) {
     let openModal = document.querySelector('.is-modal-open');
 
-    if(openModal) {
-      if(!cartItem) {
-        return;
-      }
-      
+    if(openModal && cartItem) {
       let productId = cartItem.product.id;
       let modalBody = document.querySelector('.modal__body');
 
