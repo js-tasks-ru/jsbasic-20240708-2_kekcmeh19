@@ -45,6 +45,7 @@ export default class Cart {
         
         if(this.cartItems[i].count === 0) {
           this.cartItems.splice(i, 1);
+          this.onProductUpdate();
         }
       }
     }
@@ -185,7 +186,7 @@ export default class Cart {
   onProductUpdate(cartItem) {
     let openModal = document.querySelector('.is-modal-open');
 
-    if(openModal) {
+    if(openModal && cartItem) {
       let productId = cartItem.product.id;
       let modalBody = document.querySelector('.modal__body');
 
@@ -247,4 +248,3 @@ export default class Cart {
     this.cartIcon.elem.onclick = () => this.renderModal();
   }
 }
-

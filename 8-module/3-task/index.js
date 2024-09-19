@@ -38,6 +38,7 @@ export default class Cart {
         
         if(this.cartItems[i].count === 0) {
           this.cartItems.splice(i, 1);
+          this.onProductUpdate();
         }
       }
     }
